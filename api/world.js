@@ -10,7 +10,6 @@ const url = "https://covid-19-statistics.p.rapidapi.com/reports/total";
 fetch(url, options)
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
     const total = document.querySelector(".total-world-cases");
     const active = document.querySelector(".cardone-nums");
     const recovered = document.querySelector(".recover-nums");
@@ -68,7 +67,7 @@ fetch(
   })
   .then((data) => {
     values = [];
-    console.log(data);
+
     data.map((data) => {
       const totalCases = data.TotalCases;
       values.push(totalCases);
@@ -83,7 +82,7 @@ fetch(
         }
       });
     });
-    console.log(topEffectedCountries);
+
     topEffectedCountries.map((data) => {
       const mang = document.querySelector(".mang");
       const div = document.createElement("div");
@@ -115,7 +114,6 @@ fetch(
       news.push(newsData);
     }
     news.map((data) => {
-      console.log(data);
       const cardsix = document.querySelector(".news-fetch");
       const div = document.createElement("div");
       div.innerHTML = `  <div class="cardsix-news">

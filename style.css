@@ -360,3 +360,7 @@ body {
 .chart {
   padding: 3rem;
 }
+
+.active {
+  display: none;
+}
