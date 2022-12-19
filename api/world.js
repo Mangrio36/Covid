@@ -86,9 +86,19 @@ fetch(
     console.log(topEffectedCountries);
     topEffectedCountries.map((data) => {
       console.log(data.Country);
+      const mang = document.querySelector(".mang");
       const div = document.createElement("div");
-      div.innerText = data.Country;
-      console.log(div.innerText);
+      div.innerHTML = `<div class="cardfiv-most">
+      <div class="cardfive-box">
+        <img class="flag" src="https://flagsapi.com/${data.TwoLetterSymbol.toUpperCase()}/flat/24.png" />
+        <p class="cardfive-country">${data.Country}</p>
+      </div>
+      <p class="most-effect-number">${data.TotalCases}</p>
+      <p class="most-effect-number">${data.TotalRecovered}</p>
+      <p class="most-effect-number">${data.TotalDeaths}</p>
+    </div>`;
+      mang.appendChild(div);
+      console.log(mang.innerHTML);
     });
   })
   .catch((err) => console.error(err));
