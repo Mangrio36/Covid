@@ -75,14 +75,20 @@ fetch(
     });
 
     var topValues = values.sort((a, b) => b - a).slice(0, 5);
-
+    const topEffectedCountries = [];
     topValues.map((nums) => {
-      console.log(nums);
       data.map((data) => {
         if (nums === data.TotalCases) {
-          console.log(data);
+          topEffectedCountries.push(data);
         }
       });
+    });
+    console.log(topEffectedCountries);
+    topEffectedCountries.map((data) => {
+      console.log(data.Country);
+      const div = document.createElement("div");
+      div.innerText = data.Country;
+      console.log(div.innerText);
     });
   })
   .catch((err) => console.error(err));
