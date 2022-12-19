@@ -85,7 +85,6 @@ fetch(
     });
     console.log(topEffectedCountries);
     topEffectedCountries.map((data) => {
-      console.log(data.Country);
       const mang = document.querySelector(".mang");
       const div = document.createElement("div");
       div.innerHTML = `<div class="cardfiv-most">
@@ -98,7 +97,43 @@ fetch(
       <p class="most-effect-number">${data.TotalDeaths}</p>
     </div>`;
       mang.appendChild(div);
-      console.log(mang.innerHTML);
+    });
+  })
+  .catch((err) => console.error(err));
+
+fetch(
+  "https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/news/get-coronavirus-news/0",
+  option
+)
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    news = [];
+    for (i = 0; i < 2; i++) {
+      const newsData = data.news[i];
+      news.push(newsData);
+    }
+    news.map((data) => {
+      console.log(data);
+      const cardsix = document.querySelector(".news-fetch");
+      const div = document.createElement("div");
+      div.innerHTML = `  <div class="cardsix-news">
+      <div>
+        <p class="headline">
+          ${data.title}
+        </p>
+        
+        <div class="arthur">
+          <p>${data.reference}</p>
+          <p>${data.pubDate}</p>
+        </div>
+      </div>
+      <div class="img-container">
+        <img src="${data.urlToImage}" alt="" />
+      </div>
+    </div>`;
+      cardsix.appendChild(div);
     });
   })
   .catch((err) => console.error(err));
