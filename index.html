@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+
+    <script src="./api/map.js" defer></script>
+    <script src="./api/world.js" defer></script>
+    <title>Caovid Tracker</title>
+  </head>
+  <body>
+    <main class="main-body">
+      <nav class="navigatoin">
+        <img class="logo" src="./corona.jpeg" alt="" />
+      </nav>
+      <div>
+        <div class="header">
+          <h1>Covid-19 coranaVirus Tracker</h1>
+          <span class="update">Updated: Decemeber 18 2022</span>
+        </div>
+        <section class="main-section">
+          <div class="cardone">
+            <span class="card-heading"
+              ><strong>CoranaVirus Cases </strong>-WorldWide
+            </span>
+            <p class="Cardone-total">TOTAL CONFRIMRD CASES</p>
+            <span class="total-world-cases">621,570</span>
+            <div class="line-details">
+              <div class="line-1"></div>
+              <div class="line-2"></div>
+              <div class="line-3"></div>
+            </div>
+            <div class="cardone-flex">
+              <div class="cardone-details">
+                <div class="box">
+                  <div class="color-active color-box"></div>
+                  <p>Active Cases</p>
+                </div>
+                <div class="cardone-nums">455,523</div>
+              </div>
+              <div class="cardone-details">
+                <div class="box">
+                  <div class="color-recover color-box"></div>
+                  <p>Recovered</p>
+                </div>
+                <div class="cardone-nums recover-nums">455,523</div>
+              </div>
+              <div class="cardone-details">
+                <div class="box">
+                  <div class="color-death color-box"></div>
+                  <p>Deaths</p>
+                </div>
+                <div class="cardone-nums deaths-nums">455,523</div>
+              </div>
+            </div>
+            <span class="cardone-last"
+              >The fatality rate <span class="fata"></span> is globally</span
+            >
+          </div>
+          <div class="cardtwo">
+            <div class="search-bar">
+              <form action="submit" class="form">
+                <div class="autocomplete">
+                  <input
+                    class="searchdata"
+                    type="text"
+                    name="myCountry"
+                    placeholder="Cases By Country"
+                  />
+                </div>
+                <button class="btn" type="submit">Search</button>
+              </form>
+              <div class="cardtwo-countries">
+                <div class="countries-list">
+                  <p>World</p>
+                  <p class="serach-numbr">254,545</p>
+                </div>
+                <div class="countries-list">
+                  <p>World</p>
+                  <p class="serach-numbr">254,545</p>
+                </div>
+                <div class="countries-list">
+                  <p>World</p>
+                  <p class="serach-numbr">254,545</p>
+                </div>
+                <div class="countries-list">
+                  <p>World</p>
+                  <p class="serach-numbr">254,545</p>
+                </div>
+              </div>
+            </div>
+            <div class="map-area">
+              <div id="map" class="mapbox"></div>
+              <div class="chart">
+                <div class="chart-indicator">
+                  <div class="color-active color-box"></div>
+                  <p>Daily Infected Cases</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cardthree">
+            <span class="card-heading"
+              ><strong>CoranaVirus Cases </strong>-Pakistan</span
+            >
+            <div class="cardtwo-flex">
+              <div class="cardtwo-details">
+                <p class="cardtwo-confirm">CONFIRMED</p>
+                <span class="cardtwo-confirm-numbr">48</span>
+              </div>
+              <div class="cardtwo-details">
+                <p class="cardtwo-confirm">RECOVRED</p>
+                <span class="cardtwo-recover-numbr">48</span>
+              </div>
+              <div class="cardtwo-details">
+                <p class="cardtwo-confirm">DEATHS</p>
+                <span class="cardtwo-deaths-numbr">48</span>
+              </div>
+            </div>
+            <span class="cardone-last"
+              >The ratia of Recovery (27%) & Deaths(9.5%) Pakistan</span
+            >
+            <div class="cardtwo-last">
+              <div>
+                <p class="cardtwo-confirm">Currenty Infected Patients</p>
+                <p class="cardtwo-confirm-numbr">28</p>
+              </div>
+              <div class="cardtwo-mild">
+                <div class="cardtwo-card">
+                  <div class="cardtwo-box">
+                    <div class="color-mild color-box"></div>
+                    <p>In Mild Condition</p>
+                  </div>
+                  <span class="mild-number">27</span>
+                </div>
+                <div class="cardtwo-card">
+                  <div class="cardtwo-box">
+                    <div class="color-cric color-box"></div>
+                    <p>Critical or Serious</p>
+                  </div>
+                  <span class="mild-number">01</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cardfour">
+            <div>
+              <span class="card-heading"
+                ><strong>Cases Over Time</strong>-WorldWide
+              </span>
+              <p class="cardfour-text">
+                The charts below show daily & total cases trends.
+              </p>
+            </div>
+          </div>
+          <div class="cardfive">
+            <span class="card-heading">
+              <strong>Most Affected Countries</strong>
+            </span>
+            <div>
+              <div class="cardfiv-most">
+                <p>Country</p>
+                <p>Confirn</p>
+                <p>Recovered</p>
+                <p>Deaths</p>
+              </div>
+              <div class="cardfiv-most">
+                <div class="cardfive-box">
+                  <img class="flag" src="https://flagsapi.com/US/flat/24.png" />
+                  <p class="cardfive-country">Usa</p>
+                </div>
+                <p class="most-effect-number">25444</p>
+                <p class="most-effect-number">5454</p>
+                <p class="most-effect-number">6564</p>
+              </div>
+              <div class="cardfiv-most">
+                <div class="cardfive-box">
+                  <img class="flag" src="https://flagsapi.com/PK/flat/24.png" />
+                  <p class="cardfive-country">Pakistan</p>
+                </div>
+                <p class="most-effect-number">25444</p>
+                <p class="most-effect-number">5454</p>
+                <p class="most-effect-number">6564</p>
+              </div>
+              <div class="cardfiv-most">
+                <div class="cardfive-box">
+                  <img class="flag" src="https://flagsapi.com/RU/flat/24.png" />
+                  <p class="cardfive-country">Russia</p>
+                </div>
+                <p class="most-effect-number">25444</p>
+                <p class="most-effect-number">5454</p>
+                <p class="most-effect-number">6564</p>
+              </div>
+              <div class="cardfiv-most">
+                <div class="cardfive-box">
+                  <img class="flag" src="https://flagsapi.com/CN/flat/24.png" />
+                  <p class="cardfive-country">China</p>
+                </div>
+                <p class="most-effect-number">25444</p>
+                <p class="most-effect-number">5454</p>
+                <p class="most-effect-number">6564</p>
+              </div>
+              <div class="cardfiv-most">
+                <div class="cardfive-box">
+                  <img class="flag" src="https://flagsapi.com/IT/flat/24.png" />
+                  <p class="cardfive-country">Italy</p>
+                </div>
+                <p class="most-effect-number">25444</p>
+                <p class="most-effect-number">5454</p>
+                <p class="most-effect-number">6564</p>
+              </div>
+            </div>
+          </div>
+          <div class="cardsix">
+            <span class="card-heading">
+              <strong>Top Stories & Update</strong>
+            </span>
+            <div class="cardsix-news">
+              <div>
+                <p class="headline">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Asperiores non vero
+                </p>
+                <div class="arthur">
+                  <p>The Gardian</p>
+                  <p>1 day Ago</p>
+                </div>
+              </div>
+              <div class="img-container">
+                <img src="./corona.jpeg" alt="" />
+              </div>
+            </div>
+            <div class="cardsix-news">
+              <div>
+                <p class="headline">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Asperiores non vero
+                </p>
+                <div class="arthur">
+                  <p>The Gardian</p>
+                  <p>1 day Ago</p>
+                </div>
+              </div>
+              <div class="img-container">
+                <img src="./corona.jpeg" alt="" />
+              </div>
+            </div>
+            <a href="#">More Stories</a>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js"></script>
+  </body>
+</html>
