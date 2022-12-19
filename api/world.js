@@ -16,11 +16,13 @@ fetch(url, options)
     const recovered = document.querySelector(".recover-nums");
     const deaths = document.querySelector(".deaths-nums");
     const fatality = document.querySelector(".fata");
+    const updateDate = document.querySelector(".update");
     total.innerText = data.data.confirmed;
     active.innerText = data.data.active;
     recovered.innerText = data.data.active;
     deaths.innerText = data.data.deaths;
     fatality.innerText = `(${data.data.fatality_rate})`;
+    updateDate.innerText = `Update: ${data.data.last_update}`;
   })
   .catch((err) => console.error(err));
 
@@ -33,12 +35,54 @@ const option = {
   },
 };
 
-const data = fetch(
+fetch(
   "https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data/country-report-iso-based/Pakistan/pak",
   option
 )
   .then((response) => {
     return response.json();
   })
-  .then((data) => {})
+  .then((data) => {
+    const countryConfirm = document.querySelector(".cardtwo-confirm-numbr");
+    const countryCRecover = document.querySelector(".cardtwo-recover-numbr");
+    const countryDeaths = document.querySelector(".cardtwo-deaths-numbr");
+    const countryInfect = document.querySelector(".infect-country");
+    const countryMild = document.querySelector(".mild-number");
+    const countrySerious = document.querySelector(".serious-country");
+    const recovered = document.querySelector(".recover-nums");
+    countryConfirm.innerText = data[0].TotalCases;
+    countryCRecover.innerText = data[0].TotalRecovered;
+    countryDeaths.innerText = data[0].TotalDeaths;
+    countryInfect.innerText = data[0].ActiveCases;
+    countryMild.innerText = `${data[0].Recovery_Proporation}%`;
+    countrySerious.innerText = data[0].Serious_Critical;
+  })
+  .catch((err) => console.error(err));
+
+fetch(
+  "https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data/countries",
+  option
+)
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    values = [];
+    console.log(data);
+    data.map((data) => {
+      const totalCases = data.TotalCases;
+      values.push(totalCases);
+    });
+
+    var topValues = values.sort((a, b) => b - a).slice(0, 5);
+
+    topValues.map((nums) => {
+      console.log(nums);
+      data.map((data) => {
+        if (nums === data.TotalCases) {
+          console.log(data);
+        }
+      });
+    });
+  })
   .catch((err) => console.error(err));
