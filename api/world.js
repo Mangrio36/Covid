@@ -6,6 +6,9 @@ const options = {
   },
 };
 const url = "https://covid-19-statistics.p.rapidapi.com/reports/total";
+const main = document.querySelector(".main-body");
+const loader = document.querySelector(".loader");
+main.style.display = "none";
 
 fetch(url, options)
   .then((response) => response.json())
@@ -22,6 +25,8 @@ fetch(url, options)
     deaths.innerText = data.data.deaths;
     fatality.innerText = `(${data.data.fatality_rate})`;
     updateDate.innerText = `Update: ${data.data.last_update}`;
+    main.style.display = "";
+    loader.classList.remove("loader");
   })
   .catch((err) => console.error(err));
 
@@ -42,6 +47,7 @@ fetch(
     return response.json();
   })
   .then((data) => {
+    console.log(data);
     const countryConfirm = document.querySelector(".cardtwo-confirm-numbr");
     const countryCRecover = document.querySelector(".cardtwo-recover-numbr");
     const countryDeaths = document.querySelector(".cardtwo-deaths-numbr");
@@ -49,12 +55,16 @@ fetch(
     const countryMild = document.querySelector(".mild-number");
     const countrySerious = document.querySelector(".serious-country");
     const recovered = document.querySelector(".recover-nums");
+    const risk = document.querySelector(".risk");
+    const fatalityRate = document.querySelector(".frate");
     countryConfirm.innerText = data[0].TotalCases;
     countryCRecover.innerText = data[0].TotalRecovered;
     countryDeaths.innerText = data[0].TotalDeaths;
     countryInfect.innerText = data[0].ActiveCases;
     countryMild.innerText = `${data[0].Recovery_Proporation}%`;
     countrySerious.innerText = data[0].Serious_Critical;
+    risk.innerText = `(${data[0].Infection_Risk})`;
+    fatalityRate.innerText = `(${data[0].Case_Fatality_Rate})`;
   })
   .catch((err) => console.error(err));
 
