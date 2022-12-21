@@ -28,7 +28,9 @@ fetch(url, options)
     main.style.display = "";
     loader.classList.remove("loader");
   })
-  .catch((err) => console.error(err));
+  .catch((err) => {
+    prompt("Please check your Internet connection");
+  });
 
 const option = {
   method: "GET",
