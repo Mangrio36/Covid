@@ -6,6 +6,7 @@ const options = {
   },
 };
 const url = "https://covid-19-statistics.p.rapidapi.com/reports/total";
+
 const main = document.querySelector(".main-body");
 const loader = document.querySelector(".loader");
 main.style.display = "none";
@@ -128,7 +129,8 @@ fetch(
     news.map((data) => {
       const cardsix = document.querySelector(".news-fetch");
       const div = document.createElement("div");
-      div.innerHTML = `  <div class="cardsix-news">
+      div.innerHTML = `
+     <div class="cardsix-news">
       <div>
         <p class="headline">
           ${data.title}
@@ -142,7 +144,7 @@ fetch(
       <div class="img-container">
         <img src="${data.urlToImage}" alt="" />
       </div>
-    </div>`;
+     </div>`;
       cardsix.appendChild(div);
     });
   })

@@ -23,6 +23,7 @@ fetch(
       allCountrie.appendChild(div);
       CpuntryDiv.addEventListener("click", () => {
         console.log(CpuntryDiv.innerText);
+
         fetch(
           "https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data/countries-name-ordered",
           option
