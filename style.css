@@ -20,7 +20,6 @@ h1 {
 .main-body {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 3rem;
 }
 .navigatoin {
   /* background-color: #eddbff; */
@@ -39,7 +38,7 @@ h1 {
   /* height: 100vh; */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 3rem;
 }
 .header {
   display: flex;
@@ -111,7 +110,7 @@ h1 {
 }
 .total-world-cases {
   font-size: 4rem;
-  font-weight: bold;
+  font-weight: 500;
 }
 .line-details {
   margin-top: 3rem;
@@ -144,7 +143,7 @@ h1 {
   padding: 0.5rem 0;
 }
 .cardone-nums {
-  font-weight: bold;
+  font-weight: 500;
 }
 .fata {
   color: red;
@@ -180,7 +179,7 @@ h1 {
 }
 
 .cardone-last {
-  font-weight: bold;
+  font-weight: 500;
   font-size: 1.4rem;
 }
 .cardtwo-flex {
@@ -197,31 +196,35 @@ h1 {
 }
 .cardtwo-confirm {
   font-size: 1.8rem;
-  font-weight: bold;
+  font-weight: 500;
   color: #8094ae;
 }
 .cardtwo-confirm-numbr {
   margin-top: 0.8rem;
-  font-size: 2rem;
-  font-weight: bolder;
+  font-size: 3rem;
+  font-weight: 500;
   color: #364a63;
 }
 .cardtwo-recover-numbr {
   margin-top: 0.8rem;
   font-size: 3rem;
-  font-weight: bolder;
+  font-weight: 500;
   color: #68ec68;
 }
 .cardtwo-deaths-numbr {
   margin-top: 0.8rem;
   font-size: 3rem;
-  font-weight: bolder;
+  font-weight: 500;
   color: rgb(252, 0, 0);
 }
 .cardtwo-last {
   margin-top: 6rem;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+  display: flex;
+  justify-content: space-between;
+}
+.mild-number {
+  margin-left: 2rem;
+  text-align: center;
 }
 .cardtwo-mild {
   padding: 2rem;
@@ -254,10 +257,10 @@ h1 {
   grid-template-columns: repeat(4, 1fr);
   margin-top: 2rem;
   padding-bottom: 1rem;
-  font-size: 1.4rem;
-  font-weight: bold;
+  font-size: 1.5rem;
+  font-weight: 500;
   border-bottom: 1px solid #c4c4c4;
-  gap: 2rem;
+  color: #8094ae;
 }
 .cardfive-country {
   font-size: 1.8rem;
@@ -290,7 +293,7 @@ h1 {
   justify-content: space-between;
 }
 .serach-numbr {
-  font-weight: bold;
+  font-weight: 500;
   color: #555;
 }
 .cardtwo-countries {
@@ -311,20 +314,22 @@ h1 {
   color: #8b8b8b;
 }
 .cardsix-news {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  display: flex;
+  gap: 5rem;
   margin-top: 3rem;
-  font-size: 1.8rem;
+  font-size: 2rem;
+  font-weight: 700;
+  justify-content: space-between;
+  align-items: center;
 }
-.headline {
-  color: #000;
-}
+
 .arthur {
-  margin-top: 2rem;
-  font-size: 1.2rem;
+  margin-top: 3rem;
+  font-size: 1.5rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  color: #8094ae;
 }
 .img-container {
   display: flex;
@@ -348,26 +353,6 @@ h1 {
   background-color: darkgrey;
   outline: 1px solid slategrey;
 }
-.map-area {
-  display: grid;
-  grid-template-rows: 1.5fr 1fr;
-  padding: 1rem;
-}
-.mapbox {
-  padding: 1rem;
-  border-radius: 10px;
-}
-.chart-indicator {
-  /* margin-top: 3rem; */
-  margin-bottom: 3rem;
-  display: flex;
-  align-items: center;
-  font-size: 1.6rem;
-  gap: 1rem;
-}
-.chart {
-  padding: 3rem;
-}
 
 .loader {
   border: 16px solid #f3f3f3; /* Light grey */
@@ -389,3 +374,6 @@ h1 {
     transform: rotate(360deg);
   }
 }
+/* .chatjs {
+  width: 100vh;
+} */

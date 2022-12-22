@@ -59,7 +59,7 @@
 }
 .main-body {
   display: grid;
-  padding: 2rem;
+  padding: 0;
 }
 .navigatoin {
   display: none;
@@ -119,4 +119,12 @@
 /* ************ */
 
 @media (max-width: 34em) {
+  .main-body {
+    display: block;
+    padding: 0;
+  }
+  .cardtwo-flex {
+    display: flex;
+    gap: 3rem;
+  }
 }
